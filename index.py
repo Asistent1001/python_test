@@ -69,33 +69,19 @@ def read_all_tasks() -> None:
 # read_all_tasks()
 
 
-def read_chosen_task_by_id(id: int) -> None:
+def read_chosen_task(by: int, value: str) -> None:
     with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
         for line in file_to_read:
             current_task = line.strip().split(", ")
-            if int(current_task[0]) == id:
-                print((", ").join(current_task))
+            if by == 1:
+                if current_task[0] == value:
+                    print((", ").join(current_task))
+            if by == 2:
+                if current_task[1].lower() == value.lower().strip():
+                    print((", ").join(current_task))
+            if by == 3:
+                if current_task[2].lower() == value.lower().strip():
+                    print((", ").join(current_task))
 
 
-# read_chosen_task_by_id(1)
-
-
-def read_chosen_task_by_name(name: str) -> None:
-    with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
-        for line in file_to_read:
-            current_task = line.strip().split(", ")
-            if current_task[1].lower() == name.lower():
-                print(current_task)
-
-
-# read_chosen_task_by_name("пК")
-
-
-def read_chosen_task_by_description(desc: str) -> None:
-    with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
-        for line in file_to_read:
-            current_task = line.strip().split(", ")
-            if current_task[2].lower() == desc.lower():
-                print(current_task)
-
-# read_chosen_task_by_description("надо уволиться")
+read_chosen_task(1, "3")
