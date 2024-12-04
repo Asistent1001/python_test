@@ -69,7 +69,7 @@ def read_all_tasks() -> None:
 # read_all_tasks()
 
 
-def read_chosen_task_by_id(id: int) -> str:
+def read_chosen_task_by_id(id: int) -> None:
     with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
         for line in file_to_read:
             current_task = line.strip().split(", ")
@@ -77,4 +77,14 @@ def read_chosen_task_by_id(id: int) -> str:
                 print(current_task)
 
 
-read_chosen_task_by_id(9)
+# read_chosen_task_by_id(1)
+
+
+def read_chosen_task_by_name(name: str) -> None:
+    with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
+        for line in file_to_read:
+            current_task = line.strip().split(", ")
+            if str(current_task[1]) == name:
+                print(current_task)
+
+read_chosen_task_by_name("Учить питон")
