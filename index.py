@@ -66,7 +66,7 @@ def read_all_tasks() -> None:
         print(content)
 
 
-# read_all_tasks()
+read_all_tasks()
 
 
 def read_chosen_task_by_id(id: int) -> str:
@@ -74,7 +74,7 @@ def read_chosen_task_by_id(id: int) -> str:
         for line in file_to_read:
             current_task = line.strip().split(", ")
             if int(current_task[0]) == id:
-                print(current_task)
+                print((", ").join(current_task))
 
 
-read_chosen_task_by_id(9)
+read_chosen_task_by_id(3)
