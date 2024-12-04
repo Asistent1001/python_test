@@ -65,4 +65,17 @@ def read_all_tasks() -> None:
         content = file_to_read.read()
         print(content)
 
-read_all_tasks()
+
+# read_all_tasks()
+
+
+def read_chosen_task_by_id(id: int) -> str:
+    list_of_tasks = []
+    with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
+        for line in file_to_read:
+            current_task = line.strip().split(", ")
+            list_of_tasks.append(current_task)
+        print(list_of_tasks[id - 1])
+
+
+read_chosen_task_by_id(1)
