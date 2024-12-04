@@ -37,6 +37,7 @@ TASKS_STATUS = {
     3: "done",
 }
 
+
 def add_new_task(
     task_name: str,
     task_description: str,
@@ -57,3 +58,11 @@ def add_new_task(
 #     file.write(
 #         add_new_task("Учить питон", "Надо учить чтобы не прослыть дураком", 3, 2)
 #     )
+
+
+def read_all_tasks() -> None:
+    with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
+        content = file_to_read.read()
+        print(content)
+
+read_all_tasks()
