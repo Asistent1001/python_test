@@ -66,7 +66,7 @@ def read_all_tasks() -> None:
         print(content)
 
 
-read_all_tasks()
+# read_all_tasks()
 
 
 def read_chosen_task_by_id(id: int) -> None:
@@ -87,4 +87,4 @@ def read_chosen_task_by_name(name: str) -> None:
             if str(current_task[1]) == name:
                 print(current_task)
 
-read_chosen_task_by_name("Учить питон")
+# read_chosen_task_by_name("Учить питон")
