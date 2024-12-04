@@ -84,7 +84,8 @@ def read_chosen_task_by_name(name: str) -> None:
     with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
         for line in file_to_read:
             current_task = line.strip().split(", ")
-            if str(current_task[1]) == name:
+            if current_task[1].lower() == name.lower():
                 print(current_task)
 
-read_chosen_task_by_name("ПК")
+
+read_chosen_task_by_name("пК")
