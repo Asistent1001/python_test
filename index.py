@@ -89,3 +89,13 @@ def read_chosen_task_by_name(name: str) -> None:
 
 
 # read_chosen_task_by_name("пК")
+
+
+def read_chosen_task_by_description(desc: str) -> None:
+    with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
+        for line in file_to_read:
+            current_task = line.strip().split(", ")
+            if current_task[2].lower() == desc.lower():
+                print(current_task)
+
+# read_chosen_task_by_description("надо уволиться")
