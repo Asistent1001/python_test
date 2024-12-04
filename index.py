@@ -88,4 +88,4 @@ def read_chosen_task_by_name(name: str) -> None:
                 print(current_task)
 
 
-read_chosen_task_by_name("пК")
+# read_chosen_task_by_name("пК")
