@@ -77,19 +77,7 @@ def read_chosen_task(by: int, value: str) -> None:
                 if current_task[0] == value:
                     print((", ").join(current_task))
             if by == 2 or by == 3:
-                if current_task[by -1].lower() == value.lower().strip():
+                if current_task[by - 1].lower() == value.lower().strip():
                     print((", ").join(current_task))
-            # if by == 3:
-            #     if current_task[2].lower() == value.lower().strip():
-            #         print((", ").join(current_task))
-
 
 read_chosen_task(1, "1")
-read_chosen_task(1, "2")
-read_chosen_task(1, "3")
-read_chosen_task(2, "учить питон")
-read_chosen_task(2, "работа")
-read_chosen_task(2, "пк")
-read_chosen_task(3, "надо уволиться")
-read_chosen_task(3, "чистить")
-read_chosen_task(3, "надо учить чтобы не прослыть дураком")
