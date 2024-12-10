@@ -105,4 +105,4 @@ def delete_chosen_task(id: int) -> None:
                 print("Nothing to delete")
 
 
-delete_chosen_task(1)
+# delete_chosen_task(1)
