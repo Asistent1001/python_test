@@ -98,11 +98,37 @@ def delete_chosen_task(id: int) -> None:
                 with open("tasks.txt", "w", encoding="utf-8") as file_to_write:
                     test_str = ""
                     test_str = "\n".join(map(list_to_str, tasks_list))
-                    print(tasks_list)
-                    print(test_str)
                     file_to_write.write(test_str)
             else:
                 print("Nothing to delete")
 
 
 # delete_chosen_task(1)
+
+
+def modify_chosen_task(id: int, field: int, new_value: str) -> None:
+    tasks_list = []
+    with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
+        tasks_list = [line.strip().split(", ") for line in file_to_read]
+        if id <= len(tasks_list):
+            task = tasks_list[id - 1]
+            if field == 1:
+                task[1] = new_value
+            elif field == 2:
+                task[2] = new_value
+            elif field == 3:
+                task[3] = TASKS_PRIORITY[int(new_value)]
+            elif field == 4:
+                task[4] = TASKS_STATUS[int(new_value)]
+            else:
+                print("Invalid field")
+                return
+            with open("tasks.txt", "w", encoding="utf-8") as file_to_write:
+                test_str = ""
+                test_str = "\n".join(map(list_to_str, tasks_list))
+                file_to_write.write(test_str)
+        else:
+            print("Task not found.")
+
+
+modify_chosen_task(3, 4, "2")
