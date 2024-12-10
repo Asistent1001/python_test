@@ -84,16 +84,25 @@ def read_chosen_task(by: int, value: str) -> None:
 # read_chosen_task(1, "3")
 
 
+def list_to_str(list: list) -> str:
+    return ", ".join(list)
+
+
 def delete_chosen_task(id: int) -> None:
+    tasks_list = []
     with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
         tasks_list = [line.strip().split(", ") for line in file_to_read]
-        # for line in file_to_read:
-        # current_task = line.strip().split(", ")
-        # if current_task[0] == id:
-        # line.strip().split(", ")
-        print(tasks_list)
-        del tasks_list[id - 1]
-        print(tasks_list)
+        if id <= len(tasks_list):
+            if tasks_list[id - 1][0] == str(id):
+                del tasks_list[id - 1]
+                with open("tasks.txt", "w", encoding="utf-8") as file_to_write:
+                    test_str = ""
+                    test_str = "\n".join(map(list_to_str, tasks_list))
+                    print(tasks_list)
+                    print(test_str)
+                    file_to_write.write(test_str)
+            else:
+                print("Nothing to delete")
 
 
 delete_chosen_task(1)
