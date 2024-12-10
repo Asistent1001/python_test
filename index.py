@@ -76,8 +76,24 @@ def read_chosen_task(by: int, value: str) -> None:
             if by == 1:
                 if current_task[0] == value:
                     print((", ").join(current_task))
-            if by == 2 or by == 3:
+            elif by == 2 or by == 3:
                 if current_task[by - 1].lower() == value.lower().strip():
                     print((", ").join(current_task))
 
-read_chosen_task(1, "1")
+
+# read_chosen_task(1, "3")
+
+
+def delete_chosen_task(id: int) -> None:
+    with open("tasks.txt", "r", encoding="utf-8") as file_to_read:
+        tasks_list = [line.strip().split(", ") for line in file_to_read]
+        # for line in file_to_read:
+        # current_task = line.strip().split(", ")
+        # if current_task[0] == id:
+        # line.strip().split(", ")
+        print(tasks_list)
+        del tasks_list[id - 1]
+        print(tasks_list)
+
+
+delete_chosen_task(1)
